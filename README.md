@@ -1,1 +1,1 @@
-# 09-Juicy-Breakout
+This is a paddleball game where the objective is to use the paddle to continue to hit the ball until it destroys all the blocks, but make sure the ball doesn't drop below the bottom of the screen! The ball moves pretty fast so hopefully your reflexes are good, good luck! Use the mouse to move the paddle left and right.
