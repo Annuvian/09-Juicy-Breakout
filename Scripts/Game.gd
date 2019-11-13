@@ -32,7 +32,7 @@ func make_new_ball(pos):
 	var ball = new_ball.instance()
 	ball.position = pos
 	ball.name = "Ball"
-	var vector = Vector2(0, -300)
+	var vector = Vector2(000, -750)
 	#choose a random direction, constraining it so we don't get too steep an angle
 	if randi()%2:
 		vector = vector.rotated(rand_range(PI/6,PI/3))

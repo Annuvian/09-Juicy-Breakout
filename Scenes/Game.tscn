@@ -29,9 +29,14 @@ margin_left = -72.0
 margin_top = -16.0
 margin_right = 72.0
 margin_bottom = 16.0
+color = Color( 0.52549, 0.180392, 0.611765, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" groups=[
+"Paddle",
+]]
 shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="Paddle"]
 
 [node name="Wall" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -40,10 +45,8 @@ editor/display_folded = true
 polygon = PoolVector2Array( 0, 632, 0, 0, 1024, 0, 1024, 632, 1064, 632, 1064, -40, -48, -40, -48, 632 )
 
 [node name="Tiles" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Tile Row 1" type="Node2D" parent="Tiles"]
-editor/display_folded = true
 
 [node name="Tile" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
 position = Vector2( 184, 296 )
@@ -208,19 +211,19 @@ position = Vector2( 760, 136 )
 position = Vector2( 832, 136 )
 
 [node name="Score" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 16.0
-margin_right = 112.0
-margin_bottom = 30.0
+margin_left = 4.0
+margin_top = 6.0
+margin_right = 92.0
+margin_bottom = 20.0
 text = "Score: "
 script = ExtResource( 4 )
 
 [node name="Lives" type="Label" parent="."]
-margin_left = 952.0
-margin_top = 16.0
-margin_right = 1006.0
-margin_bottom = 30.0
-text = "Lives:"
+margin_left = 893.0
+margin_top = 7.0
+margin_right = 1005.0
+margin_bottom = 21.0
+text = "Lives Remaining:"
 script = ExtResource( 5 )
 
 [node name="Starting" type="Label" parent="."]
@@ -232,4 +235,7 @@ script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="Starting"]
 wait_time = 10.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
 [connection signal="timeout" from="Starting/Timer" to="Starting" method="_on_Timer_timeout"]
